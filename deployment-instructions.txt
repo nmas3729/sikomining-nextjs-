@@ -1,0 +1,33 @@
+# Siko Mining Website Migration - Next.js Deployment Instructions
+
+This project converts the original PHP website of Siko Mining to a modern Next.js 14+ application with the App Router.
+
+## 1. Local Development and Testing
+- Install dependencies: `npm install`
+- Run the development server: `npm run dev`
+- Open [http://localhost:3000](http://localhost:3000) to view the project
+- Ensure all images, videos, and sliders behave as expected.
+
+## 2. API Configuration (Email Form)
+- Rename `.env.local.template` to `.env.local`.
+- Fill in your SMTP email credentials (e.g., Gmail with App Password, or cPanel email).
+- This will allow the contact form to send emails to `info@sikomining.co.za`.
+
+## 3. Deployment to cPanel
+- Run the build: `npm run build`
+- If you are deploying to a traditional shared host like cPanel:
+  - Usually, you will export a static version of the site using `output: 'export'` in `next.config.js` if there are no server-side needs.
+  - However, for the API route to work, you need a Node.js server.
+  - In cPanel, use the "Setup Node.js App" feature.
+  - Point the "Application root" to your project directory.
+  - Set "Application startup file" to `node_modules/.bin/next` or a custom server script.
+  - Set the "Application URL" to your domain.
+  - Run `npm install` and `npm build` in the cPanel terminal.
+
+## 4. Troubleshooting
+- **jQuery Errors**: If any jQuery plugins do not initialize properly, check the `components/ScriptInitializer.tsx` for retry logic.
+- **Images not loading**: Verify paths in the `public/images/` directory.
+- **Form errors**: Check the browser console and server logs if the contact form fails to submit.
+
+---
+**Migration Script**: Run `./migrate_assets.sh` if you need to re-copy assets from the original source.

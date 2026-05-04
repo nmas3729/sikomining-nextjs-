@@ -1,0 +1,210 @@
+/* Styles for the image carousel container and individual image wrappers */
+#media .image-gallery-slider .owl-item {
+    padding: 0.5rem; /* Add padding around each image item, similar to video showcase */
+}
+
+#media .image-gallery-slider .item .image-showcase-wrapper {
+    background: rgba(255, 255, 255, 0.3); /* Translucent white background */
+    backdrop-filter: blur(10px); /* Frosted glass effect */
+    -webkit-backdrop-filter: blur(10px); /* For Safari support */
+    border: 1px solid rgba(255, 255, 255, 0.2); /* Light border */
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15); /* Soft shadow */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for hover effects */
+    border-radius: 0.75rem; /* Rounded corners for the wrapper */
+    padding: 0.5rem; /* Inner padding for the image inside the wrapper */
+    height: 100%; /* Ensure wrapper takes full height of carousel item */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Hover effect for the image wrapper */
+#media .image-gallery-slider .item .image-showcase-wrapper:hover {
+    transform: translateY(-5px); /* Lift effect on hover */
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.2); /* Enhanced shadow on hover */
+}
+
+/* Styles for the image itself within the wrapper */
+#media .image-gallery-slider .item .image-showcase-wrapper img {
+    width: 100%; /* Image takes full width of its container */
+    height: 300px; /* Fixed height for all images */
+    object-fit: cover; /* Crop image to fit while maintaining aspect ratio */
+    border-radius: 0.5rem; /* Slightly smaller border-radius for the image inside the wrapper */
+    display: block; /* Remove extra space below image */
+}
+
+/* Adjust wrapper padding and image height for larger screens */
+@media (min-width: 768px) {
+    #media .image-gallery-slider .owl-item {
+        padding: 0.75rem;
+    }
+    #media .image-gallery-slider .item .image-showcase-wrapper {
+        padding: 0.75rem;
+    }
+    #media .image-gallery-slider .item .image-showcase-wrapper img {
+        height: 350px;
+    }
+}
+
+@media (min-width: 1024px) {
+    #media .image-gallery-slider .item .image-showcase-wrapper img {
+        height: 400px;
+    }
+}
+       
+#media .video-grid {
+    display: grid;
+    grid-template-columns: 1fr; /* Default to a single column */
+    gap: 1.5rem; /* 24px */
+    max-width: 80rem; /* 1280px */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+@media (min-width: 1024px) {
+    #media .video-grid {
+        grid-template-columns: repeat(2, 1fr); /* Two columns on larger screens */
+    }
+}
+#media {
+    font-family: 'Inter', sans-serif; /* Using a modern, clean font for this section */
+    padding-top: 4rem; /* 64px */
+    padding-bottom: 4rem; /* 64px */
+    background-image: linear-gradient(to bottom right, #f8fafc, #e5e7eb);
+}
+
+@media (min-width: 768px) {
+    #media {
+        padding-top: 6rem; /* 96px */
+        padding-bottom: 6rem; /* 96px */
+    }
+}
+
+/* Container styles to keep content centered */
+#media .media-container {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+@media (min-width: 640px) {
+  #media .media-container { max-width: 640px; padding-left: 1.5rem; padding-right: 1.5rem; }
+}
+@media (min-width: 768px) {
+  #media .media-container { max-width: 768px; }
+}
+@media (min-width: 1024px) {
+  #media .media-container { max-width: 1024px; padding-left: 2rem; padding-right: 2rem;}
+}
+ @media (min-width: 1280px) {
+  #media .media-container { max-width: 1280px; }
+}
+
+
+/* Title styles */
+#media .media-title-wrapper {
+    text-align: center;
+    margin-bottom: 3rem; /* 48px */
+}
+
+#media .media-title {
+    font-size: 2.25rem; /* 36px */
+    line-height: 2.5rem; /* 40px */
+    font-weight: 800;
+    color: #1f2937; /* A dark gray for high contrast */
+    letter-spacing: -0.025em;
+}
+
+@media (min-width: 640px) {
+    #media .media-title {
+        font-size: 3rem; /* 48px */
+        line-height: 1;
+    }
+}
+
+#media .media-subtitle {
+     margin-top: 1rem; /* 16px */
+     max-width: 42rem; /* 672px */
+     margin-left: auto;
+     margin-right: auto;
+     font-size: 1.25rem; /* 20px */
+     line-height: 1.75rem; /* 28px */
+     color: #4b5563; /* A slightly lighter gray */
+}
+
+/* Video player wrapper styles */
+#media .video-player-container {
+    max-width: 64rem; /* 1024px */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#media .video-showcase-wrapper {
+    background: rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-radius: 0.75rem; /* 12px */
+    padding: 0.5rem; /* 8px */
+}
+@media (min-width: 768px) {
+    #media .video-showcase-wrapper {
+        padding: 0.75rem; /* 12px */
+    }
+}
+
+
+#media .video-showcase-wrapper:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.2);
+}
+
+#media .video-showcase-wrapper video {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 0.5rem; /* 8px */
+}
+
+/* Fix for Owl Carousel navigation and dots */
+.owl-nav button {
+    background: none;
+    border: none;
+}
+.owl-dots button {
+    background: none;
+    border: none;
+}
+
+/* Stats section alignment fix */
+.stats-sec ul {
+    display: flex !important;
+    flex-direction: row !important;
+    justify-content: space-around !important;
+    flex-wrap: nowrap !important;
+    list-style: none !important;
+    padding: 0 !important;
+}
+
+.stats-sec ul li {
+    flex: 1 !important;
+    text-align: center !important;
+}
+
+/* Text wrapping fix */
+p, h1, h2, h3, h4, h5, h6 {
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    hyphens: none;
+}
+
+/* Ensure background decoration images are visible */
+.img-sec-left img[src*="team-bg.png"],
+.img-sec-right img[src*="team-bg.png"] {
+    display: block !important;
+    visibility: visible !important;
+}
